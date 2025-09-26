@@ -41,7 +41,7 @@
       border-radius: 5px;
     }
 
-    /* === GRID de 3 columnas === */
+    /* === GRID de productos === */
     #catalogo {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -67,7 +67,7 @@
 
     .producto img {
       max-width: 100%;
-      height: 120px;
+      height: 150px;
       object-fit: contain;
       margin-bottom: 10px;
     }
@@ -93,6 +93,32 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* 📱 Vista celular */
+    @media (max-width: 768px) {
+      #catalogo {
+        grid-template-columns: 1fr; /* 1 columna */
+      }
+
+      .producto img {
+        height: 200px; /* imágenes más grandes en móvil */
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+
+      .buscador input {
+        width: 90%;
+      }
+    }
+
+    /* 📲 Vista tablet (2 columnas) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      #catalogo {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -110,38 +136,80 @@
   <!-- Catálogo -->
   <div id="catalogo">
     <div class="producto" data-marca="LG">
-      <img src="img/lavasecaLG/lavasecaWD20EGNTSPG.webp" alt="Lavasecarropas">
+      <img src="img/LG/lavasecaLG/lavasecaWD20EGNTSPG.webp" alt="Lavasecarropas">
       <h3>Lavasecarropas WD20EGNTSPG</h3>
       <p>Marca: LG</p>
       <p>20 + 10 Kg Inverter</p>
     </div>
 
     <div class="producto" data-marca="LG">
-      <img src="img/lavasecaLG/lavasecaWD15EGNTSPG.webp" alt="Lavasecarropas">
+      <img src="img/LG/lavasecaLG/lavasecaWD15EGNTSPG.webp" alt="Lavasecarropas">
       <h3>Lavasecarropas WD15EGNTSPG</h3>
       <p>Marca: LG</p>
       <p>15 + 8 Kg Inverter</p>
     </div>
 
     <div class="producto" data-marca="LG">
-      <img src="img/heladeralg/heladeraGm57Sxm.webp" alt="Heladera">
+      <img src="img/LG/heladeralg/heladeraGm57Sxm.webp" alt="Heladera">
       <h3>Heladera GM57SXM</h3>
       <p>Marca: LG</p>
       <p>Inverter 718Lts Instaview Negra Side By Side</p>
     </div>
 
     <div class="producto" data-marca="CANDY">
-      <img src="img/lavavajillascandy/16cubiertosaceroinoxidable.webp" alt="Lavavajillas">
+      <img src="img/CANDY/lavavajillascandy/16cubiertosaceroinoxidable.webp" alt="Lavavajillas">
       <h3>Lavavajillas CF6C4F1PS</h3>
       <p>Marca: CANDY</p>
       <p>16 cubiertos inverter acero inoxidable</p>
     </div>
 
     <div class="producto" data-marca="CANDY">
-      <img src="img/lavavajillascandy/16cubiertosblanco.webp" alt="Lavavajillas Blanco">
+      <img src="img/CANDY/lavavajillascandy/16cubiertosblanco.webp" alt="Lavavajillas Blanco">
       <h3>Lavavajillas CF6C4F1PS</h3>
       <p>Marca: CANDY</p>
       <p>16 cubiertos inverter blanco</p>
+    </div>
+
+    <div class="producto" data-marca="Kitchenaid">
+      <img src="img/KITCHENAID/cuchillos/taco11piezasabedul.webp" alt="Taco Cuchillos">
+      <h3>Taco Cuchillos KAG12STSNBXOBQ</h3>
+      <p>Marca: Kitchenaid</p>
+      <p>11 Pzs Abedul</p>
+    </div>
+
+    <div class="producto" data-marca="Kitchenaid">
+      <img src="img/KITCHENAID/setollas/setollas80120.webp" alt="Set Ollas">
+      <h3>Set Ollas 80120</h3>
+      <p>Marca: Kitchenaid</p>
+      <p>11 pzs Antiadherente acero Inoxidable</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
     </div>
   </div>
 
