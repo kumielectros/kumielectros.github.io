@@ -2,180 +2,223 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kumi Electrodomésticos</title>
+  <title>Kumi Electros - Catálogo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #ffffff;
+      background: #ffffff;
+      color: #333;
     }
 
     header {
-      background-color: #008c45; /* Verde Kumi */
+      background: #007b5e; /* verde principal */
       color: white;
-      text-align: center;
       padding: 20px;
+      text-align: center;
     }
 
     header img {
-      max-height: 50px;
+      height: 70px;
       margin-bottom: 10px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 28px;
     }
 
-    .search-bar {
+    .buscador {
       text-align: center;
       margin: 20px;
     }
 
-    .search-bar input {
-      width: 80%;
-      max-width: 400px;
+    .buscador input {
+      width: 60%;
       padding: 10px;
       font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
-    /* === GRILLA DE PRODUCTOS === */
-    .product-grid {
+    /* === GRID de 3 columnas (por defecto PC) === */
+    #catalogo {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .product {
-      border: 1px solid #ddd;
+    .producto {
+      border: 1px solid #ccc;
       border-radius: 10px;
+      background: white;
       padding: 15px;
       text-align: center;
-      background: white;
+      transition: 0.2s;
     }
 
-    .product img {
+    .producto:hover {
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transform: scale(1.05);
+    }
+
+    .producto img {
       max-width: 100%;
-      height: auto;
+      height: 120px;
+      object-fit: contain;
       margin-bottom: 10px;
     }
 
-    .product h3 {
-      font-size: 18px;
-      margin: 10px 0 5px 0;
-    }
-
-    .product p {
-      margin: 5px 0;
-      font-size: 14px;
-      color: #333;
-    }
-
     footer {
-      text-align: center;
       background: #f1f1f1;
+      text-align: center;
       padding: 20px;
-      font-size: 14px;
       margin-top: 30px;
     }
 
     footer a {
-      color: #008c45;
+      color: #007b5e;
       text-decoration: none;
-      margin: 0 5px;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     /* === RESPONSIVE === */
     @media (max-width: 1024px) {
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+      #catalogo {
+        grid-template-columns: repeat(2, 1fr); /* tablets */
       }
     }
 
     @media (max-width: 768px) {
-      .product-grid {
-        grid-template-columns: 1fr;
+      #catalogo {
+        grid-template-columns: 1fr; /* celulares */
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- Portada -->
   <header>
-    <img src="logo.png" alt="Logo Kumi"> <!-- podés reemplazar logo.png -->
+    <img src="img/logochiquito2.png" alt="Logo Kumi">
     <h1>Kumi</h1>
   </header>
 
-  <!-- BUSCADOR -->
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Buscar electrodoméstico..." onkeyup="buscarProducto()">
+  <!-- Buscador -->
+  <div class="buscador">
+    <input type="text" id="buscar" placeholder="Buscar electrodoméstico...">
   </div>
 
-  <!-- PRODUCTOS -->
-  <section class="product-grid" id="productGrid">
-    <div class="product">
-      <img src="https://www.lg.com/ar/images/lavadoras-y-secadoras/md07555201/gallery/D-01.jpg" alt="Lavasecarropas">
+  <!-- Catálogo -->
+  <div id="catalogo">
+    <div class="producto" data-marca="LG">
+      <img src="img/LG/lavasecaLG/lavasecaWD20EGNTSPG.webp" alt="Lavasecarropas">
       <h3>Lavasecarropas WD20EGNTSPG</h3>
-      <p><b>Marca:</b> LG</p>
+      <p>Marca: LG</p>
       <p>20 + 10 Kg Inverter</p>
     </div>
 
-    <div class="product">
-      <img src="https://www.lg.com/ar/images/lavadoras-y-secadoras/md07555177/gallery/D-01.jpg" alt="Lavasecarropas">
+    <div class="producto" data-marca="LG">
+      <img src="img/LG/lavasecaLG/lavasecaWD15EGNTSPG.webp" alt="Lavasecarropas">
       <h3>Lavasecarropas WD15EGNTSPG</h3>
-      <p><b>Marca:</b> LG</p>
+      <p>Marca: LG</p>
       <p>15 + 8 Kg Inverter</p>
     </div>
 
-    <div class="product">
-      <img src="https://www.lg.com/ar/images/refrigeradores/md07559684/gallery/1100_01.jpg" alt="Heladera">
+    <div class="producto" data-marca="LG">
+      <img src="img/LG/heladeralg/heladeraGm57Sxm.webp" alt="Heladera">
       <h3>Heladera GM57SXM</h3>
-      <p><b>Marca:</b> LG</p>
+      <p>Marca: LG</p>
       <p>Inverter 718Lts Instaview Negra Side By Side</p>
     </div>
 
-    <div class="product">
-      <img src="https://www.candy-home.com/content/dam/candy/countries/ar/RETE/000/RETE00000060/gallery/dishwasher.png" alt="Lavavajillas">
+    <div class="producto" data-marca="CANDY">
+      <img src="img/CANDY/lavavajillascandy/16cubiertosaceroinoxidable.webp" alt="Lavavajillas">
       <h3>Lavavajillas CF6C4F1PS</h3>
-      <p><b>Marca:</b> CANDY</p>
+      <p>Marca: CANDY</p>
       <p>16 cubiertos inverter acero inoxidable</p>
     </div>
 
-    <div class="product">
-      <img src="https://www.candy-home.com/content/dam/candy/countries/ar/RETE/000/RETE00000061/gallery/dishwasher.png" alt="Lavavajillas">
+    <div class="producto" data-marca="CANDY">
+      <img src="img/CANDY/lavavajillascandy/16cubiertosblanco.webp" alt="Lavavajillas">
       <h3>Lavavajillas CF6C4F1PS</h3>
-      <p><b>Marca:</b> CANDY</p>
+      <p>Marca: CANDY</p>
       <p>16 cubiertos inverter blanco</p>
     </div>
-  </section>
 
-  <!-- PIE DE PÁGINA -->
+    <div class="producto" data-marca="Kitchenaid">
+      <img src="img/KITCHENAID/cuchillos/taco11piezasabedul.webp" alt="Taco Cuchillos">
+      <h3>Taco Cuchillos KAG12STSNBXOBQ</h3>
+      <p>Marca: Kitchenaid</p>
+      <p>11 Pzs Abedul</p>
+    </div>
+
+    <div class="producto" data-marca="Kitchenaid">
+      <img src="img/KITCHENAID/setollas/setollas80120.webp" alt="Set Ollas">
+      <h3>Set Ollas 80120</h3>
+      <p>Marca: Kitchenaid</p>
+      <p>11 pzs Antiadherente acero Inoxidable</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+
+    <div class="producto" data-marca="MARCA">
+      <img src="sinPRODUCTO.png" alt="PRODUCTO">
+      <h3>SIN ARTICULO</h3>
+      <p>Marca: MARCA</p>
+      <p>DESCRIPCION</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    📧 CONTACTO/GMAIL: <a href="mailto:kumielectros@gmail.com">kumielectros@gmail.com</a><br>
-    <a href="https://wa.me/541169942951" target="_blank">WhatsApp</a> | 
-    <a href="https://instagram.com/" target="_blank">Instagram</a><br>
-    © 2025 Kumi Electros
+    <p>📧 CONTACTO/GMAIL: <a href="mailto:kumielectros@gmail.com">kumielectros@gmail.com</a></p>
+    <p>
+      <a href="https://wa.me/541169942951" target="_blank">WhatsApp</a> |
+      <a href="https://instagram.com/TUINSTAGRAM" target="_blank">Instagram</a>
+    </p>
+    <p>© 2025 Kumi Electros</p>
   </footer>
 
-  <!-- SCRIPT BUSCADOR -->
+  <!-- Buscador JS -->
   <script>
-    function buscarProducto() {
-      let input = document.getElementById("searchInput").value.toLowerCase();
-      let productos = document.getElementById("productGrid").getElementsByClassName("product");
-
-      for (let i = 0; i < productos.length; i++) {
-        let texto = productos[i].innerText.toLowerCase();
-        if (texto.includes(input)) {
-          productos[i].style.display = "";
-        } else {
-          productos[i].style.display = "none";
-        }
-      }
-    }
+    document.getElementById('buscar').addEventListener('keyup', function() {
+      let valor = this.value.toLowerCase();
+      document.querySelectorAll('.producto').forEach(prod => {
+        prod.style.display = prod.innerText.toLowerCase().includes(valor) ? '' : 'none';
+      });
+    });
   </script>
 
 </body>
